@@ -2,11 +2,11 @@ require 'json'
 require 'securerandom'
 require 'telegram/bot'
 
-rules = File.read('adblock/ios/adguard_annoyances_optimized.txt').split("\n") + \
-        File.read('adblock/ios/adguard_base_optimized.txt').split("\n") +   \
-        File.read('adblock/ios/adguard_mobile_optimized.txt').split("\n") + \
-        File.read('adblock/ios/adguard_social_optimized.txt').split("\n") + \
-        File.read('adblock/ios/adguard_tracking_protection_optimized.txt').split("\n") + \
+rules = File.read('adblock/ios/adguard_annoyances.txt').split("\n") + \
+        File.read('adblock/ios/adguard_base.txt').split("\n") +   \
+        File.read('adblock/ios/adguard_mobile.txt').split("\n") + \
+        File.read('adblock/ios/adguard_social.txt').split("\n") + \
+        File.read('adblock/ios/adguard_tracking_protection.txt').split("\n") + \
         File.read('f9161fd2489c677e795256e5464338d1/custom_blocklist.txt').split("\n")
 rules = rules.uniq.delete_if { |e| e == '' }
 File.write('rules.txt', rules.join("\n"))
