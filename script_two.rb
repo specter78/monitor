@@ -36,5 +36,5 @@ token = ENV["BOT"]
 chat_id = ENV["CHAT"]
 bot = Telegram::Bot::Client.new(token)
 path_to_file = File.expand_path("./blockerList.json")
-caption = "Rules Count = #{converted_rules.count}"
+caption = "Modified Converter\nRules Count = #{converted_rules.count}"
 bot.api.send_document(chat_id: chat_id, document: Faraday::UploadIO.new(path_to_file, 'text/plain'), caption: caption)
